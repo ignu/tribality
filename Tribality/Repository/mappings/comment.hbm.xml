@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Tribality"
+                   namespace="Tribality.Models">
+  <class name="Comment" lazy="true" table="Comment">
+
+    <id name="ID">
+      <generator class="native" />
+    </id>
+    
+    <property name="Body"/>
+    <property name="Date"/>
+    <many-to-one class="Post" name="Post" column="PostID" cascade="none"/>
+    <many-to-one class="User" name="Poster" column="PosterID" cascade="none"/>
+    
+                
+
+  </class>
+</hibernate-mapping>

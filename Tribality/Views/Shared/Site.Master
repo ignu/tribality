@@ -1,0 +1,73 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tribality.Views.Shared.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title><%= Html.Encode(ViewData["Title"]) %></title>
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="/Content/jquery.js" type="text/javascript"></script>
+    <script src="/Content/jquery.plugins.js" type="text/javascript"></script>
+    <script src="/Content/jqmodal.js" type="text/javascript"></script>
+    <script src="/Content/tribality.js" type="text/javascript"></script>
+    <script src="/Content/Entities.aspx" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="title">
+                <h1>MVC & JQuery</h1>
+            </div>
+              
+             <div id="logindisplay">
+<%
+    if (Request.IsAuthenticated) {
+%>
+        Welcome <b><%= Html.Encode(Page.User.Identity.Name) %></b>!
+        [ <%= Html.ActionLink<AccountController>(c => c.Logout(), "Logout", "Account") %> ]
+<%
+    }
+    else {
+%> 
+        [ <%= Html.ActionLink("Login", "Login", "Account")%> ]
+<%
+    }
+%>
+
+            </div> 
+            
+            <div id="menucontainer">            
+                <ul id="menu">                                  
+                    <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
+                    <li><%= Html.ActionLink("About Us", "About", "Home")%></li>
+                    <%if (Request.IsAuthenticated){%>
+                        <li><a class="ajaxLink" href="/Post/Edit">Post</a></li>
+                    <%}%>
+                </ul>            
+            </div> 
+        </div>
+
+        <div id="main">
+        <table width="100%">
+            <tr>
+                <td valign="top" width="100%">            
+                    <div id="body">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
+                </td>
+            <td valign="top" with="180px">
+            <div id="sidebar">
+                <%Html.RenderAction<Tribality.Controllers.PostController>(x => x.TopPosts());%>
+            </div>
+            </td></tr></table>
+                                    
+            
+            <div id="footer">
+                <%=DateTime.Now.ToLongTimeString() %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

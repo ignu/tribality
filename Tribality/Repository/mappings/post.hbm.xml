@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Tribality"
+                   namespace="Tribality.Models">
+  <class name="Post" lazy="true" table="Posts">
+    
+      <id name="ID"><generator class="native" /></id>
+      <discriminator column="type"/>
+      <property name="Body" length="8000"/>      
+      <property name="Date"/>
+      <many-to-one class="User" name="Owner" column="user_id"/>
+        
+	<subclass name="BlogPost" discriminator-value="b">
+
+	<property name="Subject" length="1000"/>
+	<property name="PrettyUrl" length="1000"/>      
+		
+      <set name="Comments">
+        <key column="postID"/>
+        <one-to-many class="Comment"/>      
+      </set>
+    </subclass>
+	  
+	<subclass name="PairRequest" discriminator-value="p">
+		<property name="Description" length="8000"/>		  
+	</subclass>  
+	  
+  </class>
+	
+</hibernate-mapping>
