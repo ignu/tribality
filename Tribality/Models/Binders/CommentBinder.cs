@@ -27,17 +27,17 @@ namespace Tribality.Models.Binders
             userServices = Container.Resolve<IUserServices>();
         }
         
-        public ModelBinderResult BindModel(ModelBindingContext bindingContext)
+        public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
-            var form = bindingContext.HttpContext.Request.Form;
-            var comment = new Comment{
-                  Body = form[FormElements.Body.ToString()],
-                  Post = postServices.GetByPrettyUrl(form[FormElements.PostID.ToString()]),
-                  Poster = getCurrentUser(bindingContext.HttpContext)
-              };
-                         
-            return new ModelBinderResult(comment);
+            var form = controllerContext.HttpContext.Request.Form;
+            var comment = new Comment
+            {
+                Body = form[FormElements.Body.ToString()],
+                Post = postServices.GetByPrettyUrl(form[FormElements.PostID.ToString()]),
+                Poster = getCurrentUser(controllerContext.HttpContext)
+            };
+
+            return comment;
         }
-        
     }
 }

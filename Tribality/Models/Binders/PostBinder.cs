@@ -26,25 +26,24 @@ namespace Tribality.Models.Binders
             this.userServices = userServices;
         }
                 
-        public ModelBinderResult BindModel(ModelBindingContext bindingContext)
+        public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
-            var form = bindingContext.HttpContext.Request.Form;
+            var form = controllerContext.HttpContext.Request.Form;
 
             BlogPost blogPost = new BlogPost();
 
             if (!string.IsNullOrEmpty(form[FormElements.PostID.ToString()]))
                 blogPost = postServices.GetByPrettyUrl(form[FormElements.PostID.ToString()]);
             else
-                blogPost.Owner = getCurrentUser(bindingContext.HttpContext);
+                blogPost.Owner = getCurrentUser(controllerContext.HttpContext);
 
             if (!String.IsNullOrEmpty(form[FormElements.Body.ToString()]))
                 blogPost.Body = form[FormElements.Body.ToString()];
 
             if (!String.IsNullOrEmpty(FormElements.Subject.ToString()))
                 blogPost.Subject = form[FormElements.Subject.ToString()];
-                                 
-            return new ModelBinderResult(blogPost);
+
+            return blogPost;
         }
-               
     }
 }

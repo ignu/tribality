@@ -80,6 +80,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedLibs\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="Moq.Contrib, Version=0.1.3211.31914, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SharedLibs\Moq.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="MvcContrib, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedLibs\MvcContrib.dll</HintPath>
@@ -133,11 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binders\BindingBaseTest.cs" />
-    <Compile Include="Binders\CommentBinderSpecs\when_binding_a_comment.cs" />
-    <Compile Include="Binders\PostBinderSpecs\when_binding_a_post.cs" />
+    <Compile Include="Binders\CommentBinderSpecs\CommentBinder_when_binding_a_comment.cs" />
+    <Compile Include="Binders\PostBinderSpecs\PostBinder_when_binding_a_post.cs" />
     <Compile Include="Controllers\CommentControllerSpecs\when_saving_a_comment.cs" />
     <Compile Include="Controllers\AccountControllerSpecs\when_logging_in.cs" />
     <Compile Include="Controllers\PairingRequestControllerSpecs\PairRequestController_when_viewing_new_posts.cs" />
+    <Compile Include="Controllers\PairingRequestControllerSpecs\PairRequireController_when_adding_a_pair_request.cs" />
     <Compile Include="Controllers\PostControllerSpecs\PostController_when_viewing_a_post.cs" />
     <Compile Include="Controllers\PostControllerSpecs\PostController_when_viewing_recent_posts.cs" />
     <Compile Include="Controllers\PostControllerSpecs\post_controller_base.cs" />

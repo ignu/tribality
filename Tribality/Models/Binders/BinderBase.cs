@@ -10,6 +10,7 @@ namespace Tribality.Models.Binders
         protected User getCurrentUser(HttpContextBase context)
         {
             Check.NotNull(userServices, "You must initialize UserServices before making this call.");
+            Check.NotNull(context.User, "A User must be provided in order to bind a new post.");
             return userServices.GetByName(context.User.Identity.Name);
         }
 

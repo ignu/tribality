@@ -10,7 +10,6 @@ namespace Tribality.Tests.Binders
 {
     public class BindingBaseTest : BaseTest
     {
-        protected IValueProvider valueProvider = new Mock<IValueProvider>().Object;   
 
         protected ControllerContext getControllerContext(NameValueCollection form, string userName)
         {
@@ -28,10 +27,6 @@ namespace Tribality.Tests.Binders
             return new ControllerContext(mockHttpContext.Object, new RouteData(), new Mock<ControllerBase>().Object);
         }
 
-        protected ModelBindingContext getBindingContext(NameValueCollection form, string userName)
-        {
-            var valueProvider = new Mock<IValueProvider>();
-            return new ModelBindingContext(getControllerContext(form, userName), valueProvider.Object, typeof(Guid), null, null, null, null);
-        }
+
     }
 }

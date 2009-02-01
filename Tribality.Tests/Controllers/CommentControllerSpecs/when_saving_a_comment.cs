@@ -31,7 +31,5 @@ namespace Tribality.Tests.Controllers.CommentControllerSpecs
             // TODO: test for error message
             result.ToLower().ShouldContain("saved");
         }
-    }
-
-    
+    }    
 }

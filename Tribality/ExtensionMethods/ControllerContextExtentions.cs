@@ -5,13 +5,13 @@ using System.Collections.Specialized;
 
 namespace Tribality
 {
-    public static class ModelBindingContextExtentions
-    {
-        public static NameValueCollection GetForm(this ModelBindingContext context)
-        {
-            return context.HttpContext.Request.Form;
-        }        
-    }
+//    public static class ModelBindingContextExtentions
+//    {
+//        public static NameValueCollection GetForm(this ModelBindingContext context)
+//        {
+//            return context.HttpContext.Request.Form;
+//        }        
+//    }
 
     public static class ControllerExtentions
     {
