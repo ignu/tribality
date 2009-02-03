@@ -1,6 +1,5 @@
 using Moq;
 using NUnit.Framework;
-using Tribality.Controllers;
 using Tribality.Models;
 
 namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
@@ -12,14 +11,6 @@ namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
         {
             mockRepository.Expect(p => p.Save(It.IsAny<PairRequest>()));
             base.establish_context();
-        }
-
-        public override void because()
-        {
-            controller = new PairRequestController(mockRepository.Object);
-            PairRequest request = new PairRequest();
-            controller.Save(request);
-            
         }
 
         [Test]

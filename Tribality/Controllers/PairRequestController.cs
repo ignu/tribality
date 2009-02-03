@@ -1,6 +1,4 @@
-using System;
 using System.Web.Mvc;
-using Tribality.Models;
 using Tribality.Repository;
 using Tribality.Services;
 
@@ -32,9 +30,5 @@ namespace Tribality.Controllers
             return View(pairRequestRepository.GetPage(firstPage, PAGE_SIZE));
         }
 
-        public void Save(PairRequest request)
-        {
-            pairRequestRepository.Save(request);
-        }
     }
 }
