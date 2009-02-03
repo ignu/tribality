@@ -131,6 +131,7 @@
     <Compile Include="Models\Binders\BinderBase.cs" />
     <Compile Include="Models\Binders\CommentBinder.cs" />
     <Compile Include="Models\Binders\IFormBinder.cs" />
+    <Compile Include="Models\Binders\PairRequestBinder.cs" />
     <Compile Include="Models\Binders\PostBinder.cs" />
     <Compile Include="Models\Binders\UserBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
