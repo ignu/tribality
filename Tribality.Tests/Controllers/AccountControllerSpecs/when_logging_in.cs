@@ -7,7 +7,7 @@ namespace Tribality.Tests.Controllers
 {
 
     [TestFixture]
-    public class when_logging_in : BaseTest
+    public class AccountController_when_logging_in : BaseTest
     {
         IAccountController controller = Container.Resolve<IAccountController>();
         ActionResult result;
