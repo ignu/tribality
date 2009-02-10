@@ -37,5 +37,10 @@ namespace Tribality.Controllers
             pairRequestRepository.Save(pairRequest);
             return "Pair Request Saved.";
         }
+
+        public ViewResult New()
+        {
+            return View();
+        }
     }
 }

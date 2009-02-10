@@ -4,9 +4,11 @@
 <%var requests = ViewData.Model;
   foreach (var request in requests){            
 %>
-  <%=request.Owner.UserName %>:
-  <%=request.Description %>
+<div class="pairRequest">
+  <h2><%=request.Owner.UserName %>:
+  <%=request.Description %></h2>
   <%=request.Body %>  
-  <%=request.Date.ToString() %>
-<%} %>
+  <%=request.Date.ToShortDateString() %>
+  <%=request.Date.ToShortTimeString() %>
+<%} %></div>
 </asp:Content>

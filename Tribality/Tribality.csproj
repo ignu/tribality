@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7450E4A3-629E-4F7B-BD0C-71BF9CC19AD5}</ProjectGuid>
     <ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -358,6 +358,7 @@
     <Content Include="Views\Comment\_Add.aspx" />
     <Content Include="Views\Comment\_View.aspx" />
     <Content Include="Views\PairRequest\List.aspx" />
+    <Content Include="Views\PairRequest\New.aspx" />
     <Content Include="Views\Shared\Message.aspx" />
     <Content Include="Views\Shared\No.Master" />
     <None Include="windsor.boo">
@@ -388,9 +389,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

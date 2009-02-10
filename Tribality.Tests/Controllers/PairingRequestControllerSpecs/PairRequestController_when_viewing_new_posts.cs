@@ -4,7 +4,6 @@ using NUnit.Framework;
 using Tribality.Controllers;
 using Tribality.Models;
 using Tribality.Repository;
-using Tribality.Services;
 
 namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
 {
@@ -13,6 +12,19 @@ namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
         protected PairRequestController controller;
         protected Mock<IPairRequestRepository> mockRepository = new Mock<IPairRequestRepository>();
 
+    }
+
+
+    [TestFixture]
+    public class PairRequestController_when_adding_a_new_post_form
+    {
+        private PairRequestController controller;
+
+        [Test]
+        public void the_new_view_is_rendered()
+        {
+            controller.New().ViewName.ShouldEqual("New");
+        }        
     }
 
     [TestFixture]

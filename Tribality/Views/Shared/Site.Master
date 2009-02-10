@@ -26,7 +26,7 @@
     if (Request.IsAuthenticated) {
 %>
         Welcome <b><%= Html.Encode(Page.User.Identity.Name) %></b>!
-        [ <%= Html.ActionLink<AccountController>(c => c.Logout(), "Logout", "Account") %> ]
+        [ <%= Html.ActionLink("Logout", "Logout", "Account") %> ]
 <%
     }
     else {
@@ -44,6 +44,7 @@
                     <li><%= Html.ActionLink("About Us", "About", "Home")%></li>
                     <%if (Request.IsAuthenticated){%>
                         <li><a class="ajaxLink" href="/Post/Edit">Post</a></li>
+                        <li><a class="ajaxLink" href="/PairRequest/Edit">Post</a></li>                        
                     <%}%>
                 </ul>            
             </div> 
@@ -59,7 +60,7 @@
                 </td>
             <td valign="top" with="180px">
             <div id="sidebar">
-                <%Html.RenderAction<Tribality.Controllers.PostController>(x => x.TopPosts());%>
+                
             </div>
             </td></tr></table>
                                     
