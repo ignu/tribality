@@ -21,4 +21,4 @@ component "CommentRepository", ICommentRepository, CommentRepository
 component "PostController", IPostController, PostController
 component "AccountController", IAccountController, AccountController
 component "ICommentController", ICommentController, CommentController
-component "PairRequestController", IPairRequestController, PairRequestController
+component "PairRequest", IPairRequestController, PairRequestController

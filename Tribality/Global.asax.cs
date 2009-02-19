@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 using Tribality.Models;
 using Tribality.Models.Binders;
+using Tribality.Services;
 
 namespace Tribality
 {
@@ -32,8 +29,21 @@ namespace Tribality
         protected void Application_Start()
         {
             RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.SetControllerFactory(new CastleWindsorControllerFactory());
+      
             ModelBinders.Binders[typeof(User)] = new UserBinder();
             ModelBinders.Binders[typeof(BlogPost)] = new PostBinder();
+        }
+
+
+
+
+        public class CastleWindsorControllerFactory : DefaultControllerFactory
+        {
+            public override IController CreateController(RequestContext context, string controllerName)
+            {
+                return Container.Resolve<IController>(controllerName);
+            }
         }
     }
 }
