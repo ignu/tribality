@@ -3,23 +3,25 @@ using Moq;
 using NUnit.Framework;
 using Tribality.Controllers;
 using Tribality.Models;
+using Tribality.Repository;
 
 namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
 {
     [TestFixture]
-    public class PairRequireController_when_adding_a_pair_request : pair_request_controller_base
+    public class PairRequireController_when_adding_a_pair_request : base_automock_test
     {
         private string message;
 
         public override void establish_context()
         {
-            mockRepository.Expect(p => p.Save(It.IsAny<PairRequest>()));
+            Mock<IPairRequestRepository>()
+                .Expect(p => p.Save(It.IsAny<PairRequest>()));
             base.establish_context();
         }
 
         public override void because()
         {
-            PairRequestController controller = new PairRequestController(mockRepository.Object);
+            var controller = Create<PairRequestController>();
             this.message = controller.Save(getPairRequest());
         }
 
@@ -33,7 +35,7 @@ namespace Tribality.Tests.Controllers.PairingRequestControllerSpecs
         [Test]
         public void the_request_is_saved_by_the_repository()
         {
-            mockRepository.VerifyAll();
+            base.Verify();
         }
 
         [Test]

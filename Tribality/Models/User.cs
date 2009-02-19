@@ -6,7 +6,7 @@ namespace Tribality.Models
 {
     public class Language : Entity<int>
     {
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
     }
 
     public class User : Entity<int>

@@ -26,5 +26,11 @@
 	</subclass>  
 	  
   </class>
+  <class name="Language" table="Language">
+    <id name="ID">
+      <generator class="native" />
+    </id>
+    <property name="Name"/>
+  </class>
 	
 </hibernate-mapping>

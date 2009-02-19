@@ -161,6 +161,7 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ISessionBuilder.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Repository\LanguageRepository.cs" />
     <Compile Include="Repository\MessageRepository.cs" />
     <Compile Include="Repository\NHibernateSessionManager.cs" />
     <Compile Include="Repository\BlogPostRepository.cs" />
@@ -358,7 +359,7 @@
     <Content Include="Views\Comment\_Add.aspx" />
     <Content Include="Views\Comment\_View.aspx" />
     <Content Include="Views\PairRequest\List.aspx" />
-    <Content Include="Views\PairRequest\New.aspx" />
+    <Content Include="Views\PairRequest\Edit.aspx" />
     <Content Include="Views\Shared\Message.aspx" />
     <Content Include="Views\Shared\No.Master" />
     <None Include="windsor.boo">

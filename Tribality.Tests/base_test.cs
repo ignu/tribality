@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
-using Tribality.Models;
 
 namespace Tribality.Tests
 {
-    public class BaseTest
+    public class base_test
     {                
         [TestFixtureSetUp]
         public virtual void TestFixtureSetUp()

@@ -6,7 +6,7 @@ using Tribality.Services;
 
 namespace Tribality.Tests.Controllers.PostControllerSpecs
 {
-    public class post_controller_base : BaseTest
+    public class post_controller_base : base_test
     {
         protected ViewResult result;
         protected IPostController controller;

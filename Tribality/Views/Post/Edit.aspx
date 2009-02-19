@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <% 
        var post = ViewData.Model;
-       string message = "New Post";
+       string message = "Edit Post";
        if (post == null)
            post = new BlogPost();
        else

@@ -7,7 +7,7 @@ namespace Tribality.Tests.Controllers.CommentControllerSpecs
 {
     
     [TestFixture]
-    public class CommentController_when_saving_a_comment : BaseTest
+    public class CommentController_when_saving_a_comment : base_test
     {
         ICommentController controller = Container.Resolve<ICommentController>();
         string result;

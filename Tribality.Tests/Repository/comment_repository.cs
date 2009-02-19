@@ -10,7 +10,7 @@ using Tribality.Services;
 namespace Tribality.Tests.Repositories
 {
     [TestFixture]
-    public class comment_repository : BaseTest
+    public class comment_repository : base_test
     {
         IBlogPostRepository blogPostRepository = Container.Resolve<IBlogPostRepository>();
         IUserRepository userRepository = Container.Resolve<IUserRepository>();

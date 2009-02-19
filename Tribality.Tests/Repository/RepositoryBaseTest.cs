@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
-using Tribality.Models;
 using Tribality.Repository;
 using Tribality.Services;
 
 namespace Tribality.Tests.Repository
 {
-    public class RepositoryBaseTest<T> : BaseTest where T : IRepository
+    public class RepositoryBaseTest<T> : base_test where T : IRepository
     {
         protected T repository;
 

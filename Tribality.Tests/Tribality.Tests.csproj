@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{7FE87B0F-C173-4EEF-90FA-BB65ABC19ED5}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -136,12 +136,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="base_automock_test.cs" />
     <Compile Include="Binders\BindingBaseTest.cs" />
     <Compile Include="Binders\CommentBinderSpecs\CommentBinder_when_binding_a_comment.cs" />
     <Compile Include="Binders\PairRequestBinderSpecs\PairRequestBinder.cs" />
     <Compile Include="Binders\PostBinderSpecs\PostBinder_when_binding_a_post.cs" />
     <Compile Include="Controllers\CommentControllerSpecs\when_saving_a_comment.cs" />
     <Compile Include="Controllers\AccountControllerSpecs\when_logging_in.cs" />
+    <Compile Include="Controllers\PairingRequestControllerSpecs\PairRequestController_when_creating_a_new_pair_request.cs" />
     <Compile Include="Controllers\PairingRequestControllerSpecs\PairRequestController_when_viewing_new_posts.cs" />
     <Compile Include="Controllers\PairingRequestControllerSpecs\PairRequireController_when_adding_a_pair_request.cs" />
     <Compile Include="Controllers\PostControllerSpecs\PostController_when_viewing_a_post.cs" />
@@ -152,7 +154,7 @@
     <Compile Include="NUnitSpecExtensions.cs" />
     <Compile Include="Controllers\PostControllerSpecs\PostController_when_creating_a_post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BaseTest.cs" />
+    <Compile Include="base_test.cs" />
     <Compile Include="Repository\comment_repository.cs" />
     <Compile Include="Repository\EntityFactory.cs" />
     <Compile Include="Repository\a_comment_repository.cs" />

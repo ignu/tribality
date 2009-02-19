@@ -12,6 +12,7 @@ component "UserRepository", IUserRepository, UserRepository
 component "PairRequestRepository", IPairRequestRepository, PairRequestRepository
 component "BlogPostRepository", IBlogPostRepository, BlogPostRepository
 component "CommentRepository", ICommentRepository, CommentRepository
+component "LanguageRepository", ILanguageRepository, LanguageRepository
 
 component "UserServices", IUserServices, UserServices
 component "PostServices", IPostServices, PostServices

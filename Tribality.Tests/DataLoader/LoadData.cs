@@ -108,6 +108,20 @@ namespace Tribality.Tests
             repository.Save(pairRequest);
             
         }
-                
+
+        [Test]
+        public void can_save_languages()
+        {
+            var repository = Container.Resolve<ILanguageRepository>();
+            repository.Save(new Language { Name = "CSharp" });
+            repository.Save(new Language { Name = "C++" });
+            repository.Save(new Language { Name = "Java" });
+            repository.Save(new Language { Name = "JavaScript" });
+            repository.Save(new Language { Name = "Ruby" });
+            var language = new Language { Name = "Visual Basic" };
+            repository.Save(language);
+            language.ID.ShouldBeGreaterThan(0);
+        }
+
     }
 }

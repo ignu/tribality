@@ -6,6 +6,16 @@ using Tribality.Services;
 
 namespace Tribality.Tests.Repository
 {
+    [TestFixture]
+    public class LanguageRepositorySpecs : RepositoryBaseTest<ILanguageRepository>
+    {
+        [Test]
+        public void can_get_all_languages()
+        {
+            repository.GetAll().Count.ShouldBeGreaterThan(0);
+        }
+
+    }
 
     [TestFixture]
     public class BlogPostRepositorySpecs : RepositoryBaseTest<IBlogPostRepository>

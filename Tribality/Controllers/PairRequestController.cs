@@ -14,16 +14,19 @@ namespace Tribality.Controllers
     public class PairRequestController : ControllerBase, IPairRequestController
     {
         private IPairRequestRepository pairRequestRepository;
+        private ILanguageRepository languageRepository;
         public const int PAGE_SIZE = 20;
 
-        public PairRequestController(IPairRequestRepository pairRequestRepository1)
+        public PairRequestController(IPairRequestRepository pairRequestRepository1, ILanguageRepository languageRepository)
         {
             this.pairRequestRepository = pairRequestRepository1;
+            this.languageRepository = languageRepository;
         }
 
-        public PairRequestController()
+        public PairRequestController(ILanguageRepository languageRepository)
         {
             this.pairRequestRepository = Container.Resolve<IPairRequestRepository>();
+            this.languageRepository = languageRepository;
         }
 
         public ViewResult List(int? pageNumber)
@@ -38,9 +41,10 @@ namespace Tribality.Controllers
             return "Pair Request Saved.";
         }
 
-        public ViewResult New()
+        public ViewResult Edit()
         {
-            return View();
+            var languages = languageRepository.GetAll();
+            return View(languages);
         }
     }
 }

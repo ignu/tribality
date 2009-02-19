@@ -10,7 +10,7 @@ using Tribality.Repository;
 
 namespace Tribality.Tests
 {
-    public class AbandonTransactionOnce : BaseTest
+    public class AbandonTransactionOnce : base_test
     {
         private RollbackTransaction _Transaction;
         

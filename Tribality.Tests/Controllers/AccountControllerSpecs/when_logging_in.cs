@@ -7,7 +7,7 @@ namespace Tribality.Tests.Controllers
 {
 
     [TestFixture]
-    public class AccountController_when_logging_in : BaseTest
+    public class AccountController_when_logging_in : base_test
     {
         IAccountController controller = Container.Resolve<IAccountController>();
         ActionResult result;
@@ -25,7 +25,7 @@ namespace Tribality.Tests.Controllers
         }
     }
 
-    public class when_saving_a_post : BaseTest
+    public class when_saving_a_post : base_test
     {
         IPostController controller;
 
