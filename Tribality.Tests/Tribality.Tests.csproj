@@ -139,7 +139,7 @@
     <Compile Include="base_automock_test.cs" />
     <Compile Include="Binders\BindingBaseTest.cs" />
     <Compile Include="Binders\CommentBinderSpecs\CommentBinder_when_binding_a_comment.cs" />
-    <Compile Include="Binders\PairRequestBinderSpecs\PairRequestBinder.cs" />
+    <Compile Include="Binders\PairRequestBinderSpecs\PairRequestBinder_when_binding_a_pair_request.cs" />
     <Compile Include="Binders\PostBinderSpecs\PostBinder_when_binding_a_post.cs" />
     <Compile Include="Controllers\CommentControllerSpecs\when_saving_a_comment.cs" />
     <Compile Include="Controllers\AccountControllerSpecs\when_logging_in.cs" />

@@ -15,25 +15,21 @@ namespace Tribality.Tests.Binders.CommentBinderSpecs
     {
         private const string body = "Hello there.";
         private CommentBinder binder;
-
-        readonly User firstUser = Container.Resolve<IUserRepository>().GetFirst();
-        readonly BlogPost firstBlogPost = Container.Resolve<IBlogPostRepository>().GetFirst();
-
+        private User user;
+        private BlogPost post;
         public override void establish_context()
         {
-            var userService = new Mock<IUserServices>();
-            userService.Expect(us => us.GetByName(It.IsAny<string>())).Returns(() => firstUser);
-            var postService = new Mock<IPostServices>();
-            postService.Expect(p => p.GetByPrettyUrl(firstBlogPost.PrettyUrl)).Returns(() => firstBlogPost);
-
-            binder = new CommentBinder(postService.Object, userService.Object);
+            user = new User("ignu", "ignu.smith@gmail.com");
+            post = new BlogPost {PrettyUrl = "what-now"};
+            binder = Create<CommentBinder>();
         }
+
 
         public override void because()
         {
             form.Add(CommentBinder.FormElements.Body.ToString(), body);
-            form.Add(CommentBinder.FormElements.PosterID.ToString(), firstUser.ID.ToString());            
-            form.Add(CommentBinder.FormElements.PostID.ToString(), firstBlogPost.PrettyUrl);
+            form.Add(CommentBinder.FormElements.PosterID.ToString(), user.ID.ToString());            
+            form.Add(CommentBinder.FormElements.PostID.ToString(), post.PrettyUrl);
         }
 
         [Test]
